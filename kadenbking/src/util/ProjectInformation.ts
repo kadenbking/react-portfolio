@@ -13,7 +13,7 @@ import evolveMock from "./../img/portfolio/evolve/evolve-mock.jpeg";
 import evolveFlat from "./../img/portfolio/evolve/evolve-flat.jpg";
 import hillcrest from "./../img/portfolio/hillcrest/hillcrest.jpg";
 import hillcrestRedesign from "./../img/portfolio/hillcrest/hillcrest-redesign.jpg";
-import calledout from "./../img/portfolio/hillcrest/calledout.jpg";
+import w2w from "./../img/portfolio/hillcrest/w2w.jpg";
 import vbs2022 from "./../img/portfolio/hillcrest/vbs2022.jpg";
 import fruitofthespirit from "./../img/portfolio/hillcrest/fruitofthespirit.jpg";
 import fhubound from "./../img/portfolio/fhubound/fhubound.jpg";
@@ -159,7 +159,7 @@ export function getProject(item: string | undefined): PortfolioItem {
             break;
         case "hillcrest":
             project.title = "Hillcrest Church of Christ";
-            project.displayImgs = [{path: hillcrestRedesign, link: "https://neoshochurchofchrist.org/"}, {path: calledout, link: ""}, {path: vbs2022, link: ""}, {path: fruitofthespirit, link: ""}];
+            project.displayImgs = [{path: hillcrestRedesign, link: "https://neoshochurchofchrist.org/"}, {path: w2w, link: ""}, {path: vbs2022, link: ""}, {path: fruitofthespirit, link: ""}];
             project.description = "I worked as the Youth Ministry Intern at Hillcrest Church of Christ two separate summers while studying at FHU. Aside from my responsibilities as the Youth Intern, I redesigned the website (using WordPress), created a YouTube channel, posted hundreds of sermon videos, and updated their streaming services to live video. Since then, I have also done several graphic design projects for the church, including logos, t-shirts, stickers, and book covers.";
             project.previous = "evolve";
             project.next = "fhubound";

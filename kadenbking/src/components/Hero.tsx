@@ -1,4 +1,4 @@
-import React from "react";
+import React, { LegacyRef } from "react";
 import { Link as Scroll } from "react-scroll";
 import Title from "./Title";
 import "./../styles/hero.css";
@@ -15,9 +15,9 @@ import desktopCloud4 from "./../img/graphics/clouds/desktop/cloud4.png";
 import desktopCloud5 from "./../img/graphics/clouds/desktop/cloud5.png";
 import landscape from "./../img/graphics/landscape.png";
 
-function Hero() {
+const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
   return (
-    <div id="hero" className="banner">
+    <div id="hero" className="banner" ref={ref}>
       <div className="z-20 flex flex-col justify-center items-center mb-16 lg:mb-32">
         <Title />
         <Scroll
@@ -30,21 +30,96 @@ function Hero() {
       </div>
 
       <div className="clouds z-20 visible dark:invisible">
-        <img src={mobileCloud1} alt="cloud" id="cloud1" className="opacity-5 lg:hidden" />
-        <img src={mobileCloud2} alt="cloud" id="cloud2" className="opacity-5 lg:hidden" />
-        <img src={mobileCloud3} alt="cloud" id="cloud3" className="opacity-5 lg:hidden" />
-        <img src={mobileCloud4} alt="cloud" id="cloud4" className="opacity-5 lg:hidden" />
-        <img src={mobileCloud5} alt="cloud" id="cloud5" className="opacity-5 lg:hidden" />
-        <img src={desktopCloud1} alt="cloud" id="cloud1" className="opacity-5" />
-        <img src={desktopCloud2} alt="cloud" id="cloud2" className="opacity-5" />
-        <img src={desktopCloud3} alt="cloud" id="cloud3" className="opacity-5" />
-        <img src={desktopCloud4} alt="cloud" id="cloud4" className="opacity-5" />
-        <img src={desktopCloud5} alt="cloud" id="cloud5" className="opacity-5" />
-        <img src={desktopCloud5} alt="cloud" id="cloud10" className="opacity-5" />
-        <img src={desktopCloud4} alt="cloud" id="cloud9" className="opacity-5" />
-        <img src={desktopCloud3} alt="cloud" id="cloud8" className="opacity-5" />
-        <img src={desktopCloud2} alt="cloud" id="cloud7" className="opacity-5" />
-        <img src={desktopCloud1} alt="cloud" id="cloud6" className="opacity-5" />
+        <img
+          src={mobileCloud1}
+          alt="cloud"
+          id="cloud1"
+          className="opacity-5 lg:hidden"
+        />
+        <img
+          src={mobileCloud2}
+          alt="cloud"
+          id="cloud2"
+          className="opacity-5 lg:hidden"
+        />
+        <img
+          src={mobileCloud3}
+          alt="cloud"
+          id="cloud3"
+          className="opacity-5 lg:hidden"
+        />
+        <img
+          src={mobileCloud4}
+          alt="cloud"
+          id="cloud4"
+          className="opacity-5 lg:hidden"
+        />
+        <img
+          src={mobileCloud5}
+          alt="cloud"
+          id="cloud5"
+          className="opacity-5 lg:hidden"
+        />
+        <img
+          src={desktopCloud1}
+          alt="cloud"
+          id="cloud1"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud2}
+          alt="cloud"
+          id="cloud2"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud3}
+          alt="cloud"
+          id="cloud3"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud4}
+          alt="cloud"
+          id="cloud4"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud5}
+          alt="cloud"
+          id="cloud5"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud5}
+          alt="cloud"
+          id="cloud10"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud4}
+          alt="cloud"
+          id="cloud9"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud3}
+          alt="cloud"
+          id="cloud8"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud2}
+          alt="cloud"
+          id="cloud7"
+          className="opacity-5"
+        />
+        <img
+          src={desktopCloud1}
+          alt="cloud"
+          id="cloud6"
+          className="opacity-5"
+        />
       </div>
 
       <div id="darkContainer" className="invisible dark:visible">
@@ -58,9 +133,13 @@ function Hero() {
         <div id="stars3"></div>
       </div>
 
-      <img src={landscape} alt="landscape" className="invisible dark:visible absolute bottom-0" />
+      <img
+        src={landscape}
+        alt="landscape"
+        className="invisible dark:visible absolute bottom-0"
+      />
     </div>
   );
-}
+});
 
 export default Hero;

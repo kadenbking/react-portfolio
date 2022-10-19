@@ -23,7 +23,7 @@ export function getExperience(): ExperienceData {
         ],
         extraInformation: [
             [],
-            ["Trustee's Scholar", "FHU President's and Dean's Honor List, 3.90 GPA", "Extracurriculars: Social Club (Chi Beta Chi); Offices (President, Men's Vice President, Men's Sports Captain); Professional Club (FHU Binary Club)"],
+            ["Trustee's Scholar", "FHU President's and Dean's Honor List, 3.90 GPA", "Extracurriculars: Social Club (Chi Beta Chi); Offices (President, Men's Vice President, Men's Sports Captain); Professional Club (FHU Math and Computer Science Club)"],
             [],
             [],
             []

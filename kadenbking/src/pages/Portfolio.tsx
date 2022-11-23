@@ -21,20 +21,19 @@ function Portfolio() {
     <>
       {loading === false ? (
         <React.Fragment>
-          <div
-            className="min-h-screen flex flex-col text-center py-24"
-            ref={loadRef}
-          >
+          <div className="min-h-screen flex flex-col text-center py-24" ref={loadRef}>
             <h1 className="text-4xl text-extraDarkBlue dark:text-lightBlue font-bold my-12">
               Portfolio
             </h1>
             <p className="text-lg text-start lg:text-center text-darkBlue mx-16 lg:mx-32 xl:mx-64 mb-8 dark:text-white">
-              Below are some sample projects either from my time as a student at
-              Freed-Hardeman University or work as a freelancer. Each of the
-              cards below contain links that will provide more information about
-              the process, product, and result.
+              Below are some sample projects either from my time as a student at Freed-Hardeman
+              University or work as a freelancer. Each of the cards below contain links that will
+              provide more information about the process, product, and result.
             </p>
             <ul className="flex flex-wrap justify-center max-w-8xl mx-auto">
+              <li className="m-10" key="cp">
+                <PortfolioCard project={"cp"} />
+              </li>
               <li className="m-10" key="wardgrove">
                 <PortfolioCard project={"wardgrove"} />
               </li>
@@ -49,9 +48,6 @@ function Portfolio() {
               </li>
               <li className="m-10" key="fhubound">
                 <PortfolioCard project={"fhubound"} />
-              </li>
-              <li className="m-10" key="kindlly">
-                <PortfolioCard project={"kindlly"} />
               </li>
               <li className="m-10" key="piday">
                 <PortfolioCard project={"piday"} />

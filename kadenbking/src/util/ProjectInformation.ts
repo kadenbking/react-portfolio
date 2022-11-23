@@ -2,6 +2,9 @@ import { CardInformation, PortfolioItem } from "./types";
 import { useValidItemName } from "../hooks/useValidItemName";
 
 // Image Imports
+import cp from "./../img/portfolio/cp/cp.jpg";
+import cpLayout from "./../img/portfolio/cp/cp-layout.jpg";
+import cpExample from "./../img/portfolio/cp/cp-example.jpg";
 import wardgrove from "./../img/portfolio/wardgrove/wardgrove.jpeg";
 import wardgroveRedesign from "./../img/portfolio/wardgrove/wardgrove-redesign.jpeg";
 import wardgroveOriginal from "./../img/portfolio/wardgrove/wardgrove-original.jpeg";
@@ -19,8 +22,6 @@ import fruitofthespirit from "./../img/portfolio/hillcrest/fruitofthespirit.jpg"
 import fhubound from "./../img/portfolio/fhubound/fhubound.jpg";
 import fhubound1 from "./../img/portfolio/fhubound/fhubound1.jpg";
 import fhubound2 from "./../img/portfolio/fhubound/fhubound2.jpg";
-import kindlly from "./../img/portfolio/kindlly/kindlly.jpg";
-import kindllyLayout from "./../img/portfolio/kindlly/kindlly-layout.jpg";
 import piday from "./../img/portfolio/piday/piday.jpg";
 import pidayLayout from "./../img/portfolio/piday/piday-layout.jpg";
 import agile from "./../img/portfolio/agile/agile.jpg";
@@ -46,6 +47,12 @@ export function getCardInformation(project: string): CardInformation {
     };
 
     switch (project) {
+        case "cp":
+            cardInformation.img = cp;
+            cardInformation.title = "Competition Prediction";
+            cardInformation.description = "Full-stack web app with integrated ML";
+            cardInformation.path = "cp";
+            break;
         case "wardgrove":
             cardInformation.img = wardgrove;
             cardInformation.title = "Wardgrove";
@@ -78,12 +85,6 @@ export function getCardInformation(project: string): CardInformation {
             cardInformation.title = "FHUBound";
             cardInformation.description = "Xamarin mobile app";
             cardInformation.path = "fhubound";
-            break;
-        case "kindlly":
-            cardInformation.img = kindlly;
-            cardInformation.title = "Kindlly";
-            cardInformation.description = "Full-stack web app for school project";
-            cardInformation.path = "kindlly";
             break;
         case "piday":
             cardInformation.img = piday;
@@ -137,10 +138,17 @@ export function getProject(item: string | undefined): PortfolioItem {
     };
 
     switch (item) {
+        case "cp":
+            project.title = "Competition Prediction";
+            project.displayImgs = [{path: cpLayout, link: "https://competition-prediction.netlify.app/"}, {path: cpExample, link: "http://competition-prediction.netlify.app/"}];
+            project.description = "This was my final class project in Advanced Web Design at Freed-Hardeman University. The assignment was to create a website from scratch redesigning the site of a local Christmas tree farm. Before and after results are displayed below.";
+            project.next = "wardgrove";
+            break;
         case "wardgrove":
             project.title = "Wardgrove";
             project.displayImgs = [{path: wardgroveRedesign, link: "https://wardgrove.netlify.app/"}, {path: wardgroveOriginal, link: "http://wardgrove.com/"}];
-            project.description = "This was my final class project in Advanced Web Design at Freed-Hardeman University. The assignment was to create a website from scratch redesigning the site of a local Christmas tree farm. Before and after results are displayed below.";
+            project.description = "This was my final project in Artificial Intelligence at Freed-Hardeman University. This web app uses a Python Flask API to return predictions from trained supervised learning models to a React frontend.";
+            project.previous = "cp";
             project.next = "ncs";
             break;
         case "ncs":
@@ -169,20 +177,13 @@ export function getProject(item: string | undefined): PortfolioItem {
             project.displayImgs = [{path: fhubound1, link: ""}, {path: fhubound2, link: ""}];
             project.description = "FHUBound is a cross-platform mobile app built with Microsoft's Xamarin by several Freed-Hardeman University students. The app is for prospective students to learn more about the University, schedule campus visits, and apply to FHU. I specifically spent a large amount of time on the rewards page.";
             project.previous = "hillcrest";
-            project.next = "kindlly";
-            break;
-        case "kindlly":
-            project.title = "Kindlly";
-            project.displayImgs = [{path: kindllyLayout, link: ""}];
-            project.description = "Kindlly was a full-stack web application project for my Application Development class at Freed-Hardeman University. The front end was developed in Vue.js, the API was developed in Node.js , and the database was an Amazon DynamoDB. I also designed the UX, logo, and graphics for the project.";
-            project.previous = "fhubound";
             project.next = "piday";
             break;
         case "piday":
             project.title = "FHU Pi Day";
             project.displayImgs = [{path: pidayLayout, link: ""}];
             project.description = "I designed this sticker to promote an event for prospective students to experience a day on campus with the Computer Science department at Freed-Hardeman University. Students who attended received a Raspberry Pi and were taught how to use it by FHU professors and upperclassmen students.";
-            project.previous = "kindlly";
+            project.previous = "piday";
             project.next = "agile";
             break;
         case "agile":

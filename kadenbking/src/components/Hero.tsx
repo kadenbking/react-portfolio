@@ -21,19 +21,19 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
       </div>
 
       <div id="bubble-wrap" className="visible dark:invisible">
-        <div className="bubble bubbleOne"></div>
-        <div className="bubble bubbleTwo"></div>
-        <div className="bubble bubbleThree"></div>
-        <div className="bubble bubbleFour"></div>
-        <div className="bubble bubbleFive invisible md:visible"></div>
-        <div className="bubble bubbleSix invisible md:visible"></div>
-        <div className="bubble bubbleSeven"></div>
-        <div className="bubble bubbleEight invisible md:visible"></div>
-        <div className="bubble bubbleNine"></div>
-        <div className="bubble bubbleTen invisible md:visible"></div>
-        <div className="bubble bubbleEleven invisible md:visible"></div>
-        <div className="bubble bubbleTwelve"></div>
-        <div className="bubble bubbleThirteen invisible md:visible"></div>
+        <div className="bubble bubbleOne dark:invisible"></div>
+        <div className="bubble bubbleTwo dark:invisible"></div>
+        <div className="bubble bubbleThree dark:invisible"></div>
+        <div className="bubble bubbleFour dark:invisible"></div>
+        <div className="bubble bubbleFive invisible md:visible dark:invisible"></div>
+        <div className="bubble bubbleSix invisible md:visible dark:invisible"></div>
+        <div className="bubble bubbleSeven dark:invisible"></div>
+        <div className="bubble bubbleEight invisible md:visible dark:invisible"></div>
+        <div className="bubble bubbleNine dark:invisible"></div>
+        <div className="bubble bubbleTen invisible md:visible dark:invisible"></div>
+        <div className="bubble bubbleEleven invisible md:visible dark:invisible"></div>
+        <div className="bubble bubbleTwelve dark:invisible"></div>
+        <div className="bubble bubbleThirteen invisible md:visible dark:invisible"></div>
       </div>
 
       <div id="darkContainer" className="invisible dark:visible">

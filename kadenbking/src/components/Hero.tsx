@@ -3,17 +3,8 @@ import { Link as Scroll } from "react-scroll";
 import Title from "./Title";
 import "./../styles/hero.css";
 import crown from "./../img/graphics/crown.gif";
-import mobileCloud1 from "./../img/graphics/clouds/mobile/cloud1.png";
-import mobileCloud2 from "./../img/graphics/clouds/mobile/cloud2.png";
-import mobileCloud3 from "./../img/graphics/clouds/mobile/cloud3.png";
-import mobileCloud4 from "./../img/graphics/clouds/mobile/cloud4.png";
-import mobileCloud5 from "./../img/graphics/clouds/mobile/cloud5.png";
-import desktopCloud1 from "./../img/graphics/clouds/desktop/cloud1.png";
-import desktopCloud2 from "./../img/graphics/clouds/desktop/cloud2.png";
-import desktopCloud3 from "./../img/graphics/clouds/desktop/cloud3.png";
-import desktopCloud4 from "./../img/graphics/clouds/desktop/cloud4.png";
-import desktopCloud5 from "./../img/graphics/clouds/desktop/cloud5.png";
-import landscape from "./../img/graphics/landscape.png";
+import landscapeDark from "./../img/graphics/landscape-dark.png";
+import landscapeLight from "./../img/graphics/landscape-light.png";
 
 const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
   return (
@@ -25,101 +16,24 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
           smooth={true}
           className="motion-safe:animate-bounce pt-10 cursor-pointer hover:scale-110"
         >
-          <img src={crown} alt="" className="z-20 w-20" />
+          <img src={crown} alt="" className="z-20 w-24" />
         </Scroll>
       </div>
 
-      <div className="clouds z-20 visible dark:invisible">
-        <img
-          src={mobileCloud1}
-          alt="cloud"
-          id="cloud1"
-          className="opacity-5 lg:hidden"
-        />
-        <img
-          src={mobileCloud2}
-          alt="cloud"
-          id="cloud2"
-          className="opacity-5 lg:hidden"
-        />
-        <img
-          src={mobileCloud3}
-          alt="cloud"
-          id="cloud3"
-          className="opacity-5 lg:hidden"
-        />
-        <img
-          src={mobileCloud4}
-          alt="cloud"
-          id="cloud4"
-          className="opacity-5 lg:hidden"
-        />
-        <img
-          src={mobileCloud5}
-          alt="cloud"
-          id="cloud5"
-          className="opacity-5 lg:hidden"
-        />
-        <img
-          src={desktopCloud1}
-          alt="cloud"
-          id="cloud1"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud2}
-          alt="cloud"
-          id="cloud2"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud3}
-          alt="cloud"
-          id="cloud3"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud4}
-          alt="cloud"
-          id="cloud4"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud5}
-          alt="cloud"
-          id="cloud5"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud5}
-          alt="cloud"
-          id="cloud10"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud4}
-          alt="cloud"
-          id="cloud9"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud3}
-          alt="cloud"
-          id="cloud8"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud2}
-          alt="cloud"
-          id="cloud7"
-          className="opacity-5"
-        />
-        <img
-          src={desktopCloud1}
-          alt="cloud"
-          id="cloud6"
-          className="opacity-5"
-        />
+      <div id="bubble-wrap" className="visible dark:invisible">
+        <div className="bubble bubbleOne"></div>
+        <div className="bubble bubbleTwo"></div>
+        <div className="bubble bubbleThree"></div>
+        <div className="bubble bubbleFour"></div>
+        <div className="bubble bubbleFive"></div>
+        <div className="bubble bubbleSix"></div>
+        <div className="bubble bubbleSeven"></div>
+        <div className="bubble bubbleEight"></div>
+        <div className="bubble bubbleNine"></div>
+        <div className="bubble bubbleTen"></div>
+        <div className="bubble bubbleEleven"></div>
+        <div className="bubble bubbleTwelve"></div>
+        <div className="bubble bubbleThirteen"></div>
       </div>
 
       <div id="darkContainer" className="invisible dark:visible">
@@ -134,9 +48,14 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
       </div>
 
       <img
-        src={landscape}
+        src={landscapeDark}
         alt="landscape"
         className="invisible dark:visible absolute bottom-0"
+      />
+      <img
+        src={landscapeLight}
+        alt="landscape"
+        className="visible dark:invisible absolute bottom-0 z-10"
       />
     </div>
   );

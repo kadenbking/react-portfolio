@@ -25,15 +25,15 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="bubble bubbleTwo"></div>
         <div className="bubble bubbleThree"></div>
         <div className="bubble bubbleFour"></div>
-        <div className="bubble bubbleFive"></div>
-        <div className="bubble bubbleSix"></div>
+        <div className="bubble bubbleFive invisible md:visible"></div>
+        <div className="bubble bubbleSix invisible md:visible"></div>
         <div className="bubble bubbleSeven"></div>
-        <div className="bubble bubbleEight"></div>
+        <div className="bubble bubbleEight invisible md:visible"></div>
         <div className="bubble bubbleNine"></div>
-        <div className="bubble bubbleTen"></div>
-        <div className="bubble bubbleEleven"></div>
+        <div className="bubble bubbleTen invisible md:visible"></div>
+        <div className="bubble bubbleEleven invisible md:visible"></div>
         <div className="bubble bubbleTwelve"></div>
-        <div className="bubble bubbleThirteen"></div>
+        <div className="bubble bubbleThirteen invisible md:visible"></div>
       </div>
 
       <div id="darkContainer" className="invisible dark:visible">
@@ -55,7 +55,7 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
       <img
         src={landscapeLight}
         alt="landscape"
-        className="visible dark:invisible absolute bottom-0 z-10"
+        className="visible dark:invisible absolute bottom-0 z-20"
       />
     </div>
   );

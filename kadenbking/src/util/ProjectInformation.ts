@@ -2,6 +2,12 @@ import { CardInformation, PortfolioItem } from "./types";
 import { useValidItemName } from "../hooks/useValidItemName";
 
 // Image Imports
+import tfc from "./../img/portfolio/tatefaithco/tfc.jpg";
+import tfcHome from "./../img/portfolio/tatefaithco/tfc-home.jpg";
+import tfcCategories from "./../img/portfolio/tatefaithco/tfc-categories.jpg";
+import tfcShop from "./../img/portfolio/tatefaithco/tfc-shop.jpg";
+import tfcItem from "./../img/portfolio/tatefaithco/tfc-item.jpg";
+import tfcCart from "./../img/portfolio/tatefaithco/tfc-cart.jpg";
 import cp from "./../img/portfolio/cp/cp.jpg";
 import cpLayout from "./../img/portfolio/cp/cp-layout.jpg";
 import cpExample from "./../img/portfolio/cp/cp-example.jpg";
@@ -31,9 +37,6 @@ import coviddashboard from "./../img/portfolio/coviddashboard/coviddashboard.jpg
 import dashboard from "./../img/portfolio/coviddashboard/dashboard.jpg";
 import harlans from "./../img/portfolio/harlans/harlans.jpg";
 import harlansLayout from "./../img/portfolio/harlans/harlans-layout.jpg";
-import fhuYears from "./../img/portfolio/150years/150years.jpg";
-import fhuOriginal from "./../img/portfolio/150years/fhu-original.jpg";
-import fhuRedesign from "./../img/portfolio/150years/fhu-redesign.jpg";
 import st from "./../img/portfolio/st/st.jpg";
 import stLayout from "./../img/portfolio/st/sky-traveler.jpg";
 import award from "./../img/portfolio/st/fbla.jpeg";
@@ -47,6 +50,12 @@ export function getCardInformation(project: string): CardInformation {
     };
 
     switch (project) {
+        case "tfc":
+            cardInformation.img = tfc;
+            cardInformation.title = "Tate Faith & Co";
+            cardInformation.description = "WordPress eCommerce Site";
+            cardInformation.path = "tfc";
+            break;
         case "cp":
             cardInformation.img = cp;
             cardInformation.title = "Competition Prediction";
@@ -110,12 +119,6 @@ export function getCardInformation(project: string): CardInformation {
             cardInformation.description = "Logo design for local Automotive Repair Shop";
             cardInformation.path = "harlans";
             break;
-        case "150years":
-            cardInformation.img = fhuYears;
-            cardInformation.title = "150 Years Section Redesign";
-            cardInformation.description = "Website section redesign for school project";
-            cardInformation.path = "150years";
-            break;
         case "st":
             cardInformation.img = st;
             cardInformation.title = "Sky Traveler";
@@ -138,10 +141,17 @@ export function getProject(item: string | undefined): PortfolioItem {
     };
 
     switch (item) {
+        case "tfc":
+            project.title = "Tate Faith & Co";
+            project.displayImgs = [{path: tfcHome, link: "https://tatefaithco.com"}, {path: tfcCategories, link: "http://tatefaithco.com"}, {path: tfcShop, link: "http://tatefaithco.com/shop"}, {path: tfcItem, link: "http://tatefaithco.com"}, {path: tfcCart, link: "http://tatefaithco.com"}];
+            project.description = "Online store built through WordPress and WooCommerce for a small, family-owned boutique.";
+            project.next = "cp";
+            break;
         case "cp":
             project.title = "Competition Prediction";
             project.displayImgs = [{path: cpLayout, link: "https://competition-prediction.netlify.app/"}, {path: cpExample, link: "http://competition-prediction.netlify.app/"}];
             project.description = "This was my final class project in Advanced Web Design at Freed-Hardeman University. The assignment was to create a website from scratch redesigning the site of a local Christmas tree farm. Before and after results are displayed below.";
+            project.previous = "tfc";
             project.next = "wardgrove";
             break;
         case "wardgrove":
@@ -206,20 +216,13 @@ export function getProject(item: string | undefined): PortfolioItem {
             project.description = "This is what was said about this logo design:";
             project.testimonial = `"Kaden designed a sleek and awesome logo for one of my clients! I highly recommend his services. He is great at communicating, fast response times, and very kind. Look no further for your graphic design needs."`;
             project.previous = "coviddashboard";
-            project.next = "150years";
-            break;
-        case "150years":
-            project.title = "FHU 150 Years Section Redesign";
-            project.displayImgs = [{path: fhuRedesign, link: "https://fhu-150-years.netlify.app/"}, {path: fhuOriginal, link: ""}];
-            project.description = "Another project for Advanced Web Design at Freed-Hardeman. This assignment was to redesign the section of the website that displayed the “150 Years” logo and the three values of the University. Before and after results are displayed below.";
-            project.previous = "harlans";
             project.next = "st";
             break;
         case "st":
             project.title = "Sky Traveler";
             project.displayImgs = [{path: stLayout, link: ""}, {path: award, link: ""}];
             project.description = `Sky Traveler was a 2-D pixel, platform video game that I developed second semester of my senior year of high school. The game was made for a Future Business Leaders of America (FBLA) competition called "Computer Game and Simulation Programming". After winning 1st place in the state of Missouri, I took the project to San Antonio, Texas, where I placed 10th in the nation.`;
-            project.previous = "150years";
+            project.previous = "harlans";
             break;
         default:
             // eslint-disable-next-line react-hooks/rules-of-hooks

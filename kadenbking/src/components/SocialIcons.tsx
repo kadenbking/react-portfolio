@@ -7,7 +7,7 @@ function SocialIcons() {
 
   return (
     <React.Fragment>
-      <ul className="flex text-sm">
+      <ul className="flex text-sm justify-center">
         <li className="mr-2">
           <a href="https://www.linkedin.com/in/kadenbking" target={"blank"} aria-label="LinkedIn">
             <div className={iconClasses}>

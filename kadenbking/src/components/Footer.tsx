@@ -11,7 +11,7 @@ function Footer() {
     <React.Fragment>
       <footer className="px-4 py-6 md:p-8 bg-footerLightBlue dark:bg-footerDarkBlue">
         <div className="sm:flex sm:items-start sm:justify-between">
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center justify-center mt-3">
             <img src={icon} alt="kadenbking" className="h-8 lg:h-10 w-auto mr-4" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ function Footer() {
           </div>
         </div>
         <hr className="my-6 border-primaryBlue sm:mx-auto lg:my-8" />
-        <span className="block text-lg text-darkBlue sm:text-center dark:text-lightBlue">
+        <span className="block text-lg text-darkBlue text-center dark:text-lightBlue">
           © Kaden King 2022
         </span>
       </footer>

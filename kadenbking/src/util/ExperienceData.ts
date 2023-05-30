@@ -13,7 +13,7 @@ export function getExperience(): ExperienceData {
         logos: [clearFunction, freedhardeman, clearFunction2, freedhardeman2, hillcrest],
         companies: ["Clear Function (Memphis, TN)", "Freed-Hardeman University (Henderson, TN)", "Clear Function (Memphis, TN)", "Freed-Hardeman University (Henderson, TN)", "Hillcrest Church of Christ (Neosho, MO)"],
         dates: ["8/22 - Present", "8/19 - 5/23","5/22 - 7/22", "8/21 - 5/22", "5/20 - 8/20 | 5/21 - 8/21"],
-        titles: ["Part-Time Software Engineer", "Student - B.S. Computer Science and Interactive Digital Design", "Software Development Intern", "Campus Delegate", "Youth Ministry Intern"],
+        titles: ["Software Engineer", "Student - B.S. Computer Science and Interactive Digital Design", "Software Development Intern", "Campus Delegate", "Youth Ministry Intern"],
         descriptions: [
             "Development work for Clear Function and their clients involving a variety of different projects, frameworks, and programming languages.",
             "A double major in Computer Science and Interactive Digital Design with an emphasis in Software Development. FHU has played a pivotal role in my learning and growth as a person. FHU is a fantastic school with amazing people that care deeply about the students. ",

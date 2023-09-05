@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { FormInput } from "../util/types";
 
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbyOIlRl7I4HlPG2HGo1ddJIBR9q_Mt0al_9AXXGE60RwiUs13cbNoydf9fAkmSBM--PBA/exec";
+  "https://script.google.com/macros/s/AKfycbzH2BiPzBrEPoUB_e0b6zzWbrOvxv-wKuTwkk9yJxCKSzVA1NidplIJC1QwfNeeiS2pyA/exec";
 
 const ContactForm = () => {
   const [spinning, setSpinning] = useState<boolean>(false);

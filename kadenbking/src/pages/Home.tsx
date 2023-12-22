@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import SocialIcons from "../components/SocialIcons";
 import ContactForm from "../components/ContactForm";
 import { FaAddressCard, FaThLarge, FaRegCalendarAlt } from "react-icons/fa";
-import me from "./../img/personal-img/me.jpeg";
+import me from "./../img/personal-img/me.jpg";
 import portfolio from "./../img/personal-img/portfolio.jpeg";
 import LoadingScreen from "./../components/LoadingScreen";
 import { useOnLoadImages } from "../hooks/useOnLoadImages";

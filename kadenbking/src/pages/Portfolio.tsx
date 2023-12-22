@@ -35,8 +35,17 @@ function Portfolio() {
               the process, product, and result.
             </p>
             <ul className="flex flex-wrap justify-center max-w-8xl mx-auto">
+              <li className="m-10" key="thywordle">
+                <PortfolioCard project={"thywordle"} />
+              </li>
               <li className="m-10" key="tfc">
                 <PortfolioCard project={"tfc"} />
+              </li>
+              <li className="m-10" key="ncs">
+                <PortfolioCard project={"ncs"} />
+              </li>
+              <li className="m-10" key="hillcrest">
+                <PortfolioCard project={"hillcrest"} />
               </li>
               <li className="m-10" key="cp">
                 <PortfolioCard project={"cp"} />
@@ -44,29 +53,20 @@ function Portfolio() {
               <li className="m-10" key="wardgrove">
                 <PortfolioCard project={"wardgrove"} />
               </li>
-              <li className="m-10" key="ncs">
-                <PortfolioCard project={"ncs"} />
-              </li>
               <li className="m-10" key="evolve">
                 <PortfolioCard project={"evolve"} />
               </li>
-              <li className="m-10" key="hillcrest">
-                <PortfolioCard project={"hillcrest"} />
-              </li>
               <li className="m-10" key="fhubound">
                 <PortfolioCard project={"fhubound"} />
+              </li>
+              <li className="m-10" key="branding">
+                <PortfolioCard project={"branding"} />
               </li>
               <li className="m-10" key="piday">
                 <PortfolioCard project={"piday"} />
               </li>
               <li className="m-10" key="agile">
                 <PortfolioCard project={"agile"} />
-              </li>
-              <li className="m-10" key="coviddashboard">
-                <PortfolioCard project={"coviddashboard"} />
-              </li>
-              <li className="m-10" key="harlans">
-                <PortfolioCard project={"harlans"} />
               </li>
               <li className="m-10" key="st">
                 <PortfolioCard project={"st"} />

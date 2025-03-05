@@ -1,22 +1,26 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import icon from "../img/graphics/icon.png";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import { Link, useLocation } from "react-router-dom";
 
-interface props {
+interface Props {
   navbarOpen: boolean;
   setNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Nav: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
+const Nav: React.FC<Props> = ({ navbarOpen, setNavbarOpen }) => {
   const scrollPosition = useScrollPosition();
-  const location = useLocation();
+  const pathname = usePathname();
 
   function navClassNames() {
     const recurring =
       "w-full fixed top-0 left-0 lg:px-20 px-10 flex z-50 transform delay-100 transition-all duration-300";
 
-    if (location.pathname !== "/") {
+    if (pathname !== "/") {
       if (navbarOpen) {
         return recurring + " bg-transparent dark:bg-transparent py-4";
       }
@@ -39,8 +43,8 @@ const Nav: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
   return (
     <header className={navClassNames()}>
       <div className="flex-grow z-50">
-        <Link to="/" reloadDocument>
-          <img src={icon} alt="kadenbking" className="h-10 lg:h-12 w-auto mt-2" />
+        <Link href="/">
+          <Image src={icon} alt="kadenbking" className="h-10 lg:h-12 w-auto mt-2" priority />
         </Link>
       </div>
       <button
@@ -48,8 +52,9 @@ const Nav: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
           navbarOpen ? "bg-darkBlue" : ""
         }`}
         onClick={() => setNavbarOpen(!navbarOpen)}
+        aria-label={navbarOpen ? "Close menu" : "Open menu"}
+        title={navbarOpen ? "Close menu" : "Open menu"}
       >
-        {" "}
         <div className="absolute w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
           <span
             className={`absolute top-0 left-0 h-0.5 w-5 transform transition duration-300 ease-in-out ${
@@ -58,11 +63,11 @@ const Nav: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
           ></span>
           <span
             className={`absolute top-0 left-0 h-0.5 transform transition-all duration-200 ease-in-out ${
-              navbarOpen ? "w-0 opacity-50 bg-white" : "w-5 delay-200 opacity-100 bg-darkBlue"
+              navbarOpen ? "w-0 opacity-50 -translate-x-2" : "w-5 delay-200 bg-darkBlue"
             }`}
           ></span>
           <span
-            className={`absolute top-0 left-0  h-0.5 w-5 transform transition duration-300 ease-in-out ${
+            className={`absolute top-0 left-0 h-0.5 w-5 transform transition duration-300 ease-in-out ${
               navbarOpen ? "-rotate-45 delay-200 bg-white" : "translate-y-1.5 bg-darkBlue"
             }`}
           ></span>
@@ -71,4 +76,5 @@ const Nav: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
     </header>
   );
 };
+
 export default Nav;

@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import ReactCardFlip from "react-card-flip";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { getCardInformation } from "../util/ProjectInformation";
@@ -16,10 +19,16 @@ const PortfolioCard = (props: { project: string }) => {
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
       <div
-        className="w-72 h-72 drop-shadow-2xl cursor-pointer transition duration-150 ease-out hover:ease-in hover:scale-90"
+        className="w-72 h-72 drop-shadow-2xl cursor-pointer transition duration-150 ease-out hover:ease-in hover:scale-90 relative"
         onClick={toggleFlip}
       >
-        <img src={cardInformation.img} alt={cardInformation.title} />
+        <Image
+          src={cardInformation.img}
+          alt={cardInformation.title}
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
 
       <div
@@ -30,7 +39,7 @@ const PortfolioCard = (props: { project: string }) => {
           <div className="text-2xl text-extraLightBlue font-bold">{cardInformation.title}</div>
           <div className="text-white text-base">{cardInformation.description}</div>
           <Link
-            to={`/portfolio-item/${cardInformation.path}`}
+            href={`/portfolio-item/${cardInformation.path}`}
             className="flex flex-row justify-around items-center w-36 p-2 rounded-md bg-lightBlue hover:bg-primaryBlue text-darkBlue hover:text-white text-sm font-bold uppercase"
           >
             See More <FaAngleDoubleRight />

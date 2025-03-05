@@ -1,14 +1,17 @@
-import React, { LegacyRef } from "react";
+'use client';
+
+import React from "react";
 import { Link as Scroll } from "react-scroll";
+import Image from "next/image";
 import Title from "./Title";
 import "./../styles/hero.css";
 import crown from "./../img/graphics/crown.gif";
 import landscapeDark from "./../img/graphics/landscape-dark.png";
 import landscapeLight from "./../img/graphics/landscape-light.png";
 
-const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
+export default function Hero() {
   return (
-    <div id="hero" className="banner" ref={ref}>
+    <div id="hero" className="banner">
       <div className="z-20 flex flex-col justify-center items-center mb-16 lg:mb-32">
         <Title />
         <Scroll
@@ -16,7 +19,15 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
           smooth={true}
           className="motion-safe:animate-bounce pt-10 cursor-pointer hover:scale-110"
         >
-          <img src={crown} alt="" className="z-20 w-24" />
+          <div className="relative w-24 h-24">
+            <Image
+              src={crown}
+              alt="Scroll down"
+              fill
+              style={{ objectFit: 'contain' }}
+              className="z-20"
+            />
+          </div>
         </Scroll>
       </div>
 
@@ -47,18 +58,24 @@ const Hero = React.forwardRef((_props, ref: LegacyRef<HTMLDivElement>) => {
         <div id="stars3"></div>
       </div>
 
-      <img
-        src={landscapeDark}
-        alt="landscape"
-        className="invisible dark:visible absolute bottom-0"
-      />
-      <img
-        src={landscapeLight}
-        alt="landscape"
-        className="visible dark:invisible absolute bottom-0 z-20"
-      />
+      <div className="absolute bottom-0 w-full">
+        <div className="invisible dark:visible">
+          <Image
+            src={landscapeDark}
+            alt="Dark landscape"
+            priority
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
+        <div className="visible dark:invisible z-20">
+          <Image
+            src={landscapeLight}
+            alt="Light landscape"
+            priority
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
+      </div>
     </div>
   );
-});
-
-export default Hero;
+}

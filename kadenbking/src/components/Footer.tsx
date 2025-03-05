@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { ThemeContext } from "./ThemeContext";
 import icon from "../img/graphics/icon.png";
 import SocialIcons from "./SocialIcons";
@@ -12,22 +13,10 @@ function Footer() {
       <footer className="px-4 py-6 md:p-8 bg-footerLightBlue dark:bg-footerDarkBlue">
         <div className="sm:flex sm:items-start sm:justify-between">
           <div className="flex flex-row items-center justify-center mt-3">
-            <img
-              src={icon}
-              alt="kadenbking"
-              className="h-8 lg:h-10 w-auto mr-4"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="219"
-              height="30"
-              viewBox="0 0 485.04 66.41"
-            >
+            <Image src={icon} alt="kadenbking" className="h-8 lg:h-10 w-auto mr-4" priority />
+            <svg xmlns="http://www.w3.org/2000/svg" width="219" height="30" viewBox="0 0 485.04 66.41">
               <g>
-                <path
-                  d="M40.26,66.4H20.48L0,33.83,21.19,.19h17.66L16.95,33.21l23.31,33.19Z"
-                  fill={fill}
-                />
+                <path d="M40.26,66.4H20.48L0,33.83,21.19,.19h17.66L16.95,33.21l23.31,33.19Z" fill={fill} />
                 <path
                   d="M71.09,0l27.57,66.4H61.93l5.68-13.74h10.72c-.67-1.53-1.3-2.96-1.88-4.3-.58-1.34-1.14-2.67-1.69-3.98-.55-1.31-1.11-2.67-1.69-4.08-.58-1.4-1.24-2.99-1.97-4.76l-12.91,30.87h-14.84L71.09,0Z"
                   fill={fill}
@@ -44,10 +33,7 @@ function Footer() {
                   d="M226.93,0l44.37,66.4h-17.15l-26.25-39.29v39.29h-14.37V0h13.4ZM269.57,0V58.64l-14.37-21.56V0h14.37Z"
                   fill={fill}
                 />
-                <path
-                  d="M330.99,66.4h-19.83l-20.54-32.67L311.86,0h17.71l-21.96,33.11,23.38,33.29Z"
-                  fill={fill}
-                />
+                <path d="M330.99,66.4h-19.83l-20.54-32.67L311.86,0h17.71l-21.96,33.11,23.38,33.29Z" fill={fill} />
                 <path d="M349.73,0V66.4h-14.37V0h14.37Z" fill={fill} />
                 <path
                   d="M369.13,0l44.37,66.4h-17.15l-26.25-39.29v39.29h-14.37V0h13.4ZM411.77,0V58.64l-14.37-21.56V0h14.37Z"

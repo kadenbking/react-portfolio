@@ -1,10 +1,12 @@
+"use client";
+
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
-export const useValidItemName = ():void => {
-    const navigate = useNavigate();
+export const useValidItemName = (): void => {
+  const router = useRouter();
 
-    useEffect(() => {
-        navigate('/404');
-    }, [navigate]);
-}
+  useEffect(() => {
+    router.push("/404");
+  }, [router]);
+};

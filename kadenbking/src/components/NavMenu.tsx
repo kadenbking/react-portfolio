@@ -1,9 +1,11 @@
+'use client';
+
 import React from "react";
-import { HashLink } from "react-router-hash-link";
+import Link from "next/link";
 import { ThemeContext } from "./ThemeContext";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-interface props {
+interface Props {
   navbarOpen: boolean;
   setNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -15,8 +17,17 @@ const navigation = [
   { name: "Contact", href: "/#contact" },
 ];
 
-const NavMenu: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
+const NavMenu: React.FC<Props> = ({ navbarOpen, setNavbarOpen }) => {
   const { theme, setTheme } = React.useContext(ThemeContext);
+
+  const handleClick = (href: string) => {
+    setNavbarOpen(false);
+    const targetId = href.split('#')[1];
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <nav
@@ -32,16 +43,13 @@ const NavMenu: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
             key={item.name}
             className="flex mx-auto my-5 list-none focus:outline-none transition-all duration-200 ease-in-out"
           >
-            <HashLink
-              to={item.href}
-              scroll={(el) => el.scrollIntoView({ behavior: "smooth", block: "start" })}
+            <Link
+              href={item.href}
               className="px-10 py-5 font-bold uppercase rounded-md text-lg text-white text-center hover:bg-darkBlue cursor-pointer hover:-skew-y-6"
-              onClick={() => {
-                setNavbarOpen(false);
-              }}
+              onClick={() => handleClick(item.href)}
             >
               {item.name}
-            </HashLink>
+            </Link>
           </li>
         ))}
         <li
@@ -63,4 +71,5 @@ const NavMenu: React.FC<props> = ({ navbarOpen, setNavbarOpen }) => {
     </nav>
   );
 };
+
 export default NavMenu;

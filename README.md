@@ -1,4 +1,5 @@
 # react-portfolio
-Portfolio Site build in React
 
-Published to: kadenbking.com
+Archived Portfolio Site build in React
+
+Previously Published to: kadenbking.com
